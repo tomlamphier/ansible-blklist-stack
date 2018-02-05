@@ -31,6 +31,7 @@ Each role has its own subdirectory structure containing tasks and supporting fil
 You should get an auth message on the first pass--simply say 'yes'.  If you see the AWS Amazon Linux welcome message, you are OK. Use logout to exit.
 
 5. Run the playbook:
+
         ansible-playbook -i hosts playbook.yml
 
    This will install everything on the target computer.
