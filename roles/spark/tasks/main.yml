@@ -1,0 +1,15 @@
+---
+- name: Download Spark 
+  get_url: url=http://apache.claz.org/spark/spark-{{spark_version}}/spark-{{spark_version}}-bin-hadoop{{spark_hadoop_version}}.tgz dest=/home/ec2-user/spark.tgz checksum="{{ spark_checksum }}"
+
+- name: Extract Spark archive
+  command: chdir=/usr/local/ /bin/tar xvf /home/ec2-user/spark.tgz 
+
+- name: Clean up Spark tar file
+  file: path=/home/ec2-user/spark.tgz state=absent
+
+- name: Rename Spark directory
+  command: mv /usr/local/spark-{{spark_version}}-bin-hadoop{{spark_hadoop_version}} /usr/local/spark
+
+- name: Add Spark to PATH (only if not already added)
+  shell: fgrep spark /home/ec2-user/.bashrc || echo "export PATH=$PATH:/usr/local/spark/bin" >> /home/ec2-user/.bashrc && source /home/ec2-user/.bashrc

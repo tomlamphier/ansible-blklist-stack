@@ -1,0 +1,4 @@
+---
+- name: Install Redis package
+  yum: name=redis state=present
+  notify: start redis service
