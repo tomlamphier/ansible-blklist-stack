@@ -1,2 +1,4 @@
 playbook.retry
 *.pem
+hosts
+connect
