@@ -14,4 +14,4 @@
   command: mv /usr/local/apache-flume-{{flume_version}}-bin /usr/local/flume
 
 - name: Add Flume to PATH (only if not already added)
-  shell: fgrep flume /home/ec2-user/.bashrc || echo "export PATH=$PATH:/usr/local/flume/bin" >> /home/ec2-user/.bashrc && source /home/ec2-user/.bashrc
+  shell: fgrep flume /home/ec2-user/.bashrc || echo 'export PATH=$PATH:/usr/local/flume/bin' >> /home/ec2-user/.bashrc && source /home/ec2-user/.bashrc

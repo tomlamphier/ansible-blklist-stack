@@ -12,4 +12,4 @@
   command: mv /usr/local/spark-{{spark_version}}-bin-hadoop{{spark_hadoop_version}} /usr/local/spark
 
 - name: Add Spark to PATH (only if not already added)
-  shell: fgrep spark /home/ec2-user/.bashrc || echo "export PATH=$PATH:/usr/local/spark/bin" >> /home/ec2-user/.bashrc && source /home/ec2-user/.bashrc
+  shell: fgrep spark /home/ec2-user/.bashrc || echo 'export PATH=$PATH:/usr/local/spark/bin' >> /home/ec2-user/.bashrc && source /home/ec2-user/.bashrc
