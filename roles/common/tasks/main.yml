@@ -2,6 +2,9 @@
 - name: Create directory for scripts
   file: path=/home/ec2-user/scripts state=directory
 
+- name: Allow access to scripts
+  file: path=/home/ec2-user mode=a+x
+
 - name: Set host name
   command: hostname {{host_name}}
 
