@@ -1,6 +1,6 @@
 ---
 - name: Create directory for scripts
-  file: path=/home/ec2-user/scripts state=directory
+  file: path=/home/ec2-user/scripts state=directory mode=777
 
 - name: Allow access to scripts
   file: path=/home/ec2-user mode=a+x
