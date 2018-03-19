@@ -1,4 +1,3 @@
-host_name: blklist-vm
 flume_version: 1.8.0
 flume_checksum: "sha1:3cfe2addbb0551fa1e1a19b41a279b635b436f98"
 spark_version: 2.2.0
